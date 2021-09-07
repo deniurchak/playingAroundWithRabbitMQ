@@ -13,7 +13,7 @@ amqp.connect('amqp://localhost', function(error0, connection) {
     var exchange = 'direct_exchange';
     var args = process.argv.slice(2);
     var severity = (args.length > 0) ? args[0] : 'info';
-    var msg = process.argv.slice(2).join(' ') || "Hello World!";
+    var msg = process.argv.slice(1).join(' ') || "Hello World!";
 
     channel.assertExchange(exchange, 'direct', {
       durable: false 
